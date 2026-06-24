@@ -1,24 +1,51 @@
-# README
+# FURIMA データベース設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users
+| Column             | Type   | Options     |
+| ------------------ | ------ | ----------- |
+| nickname           | string | null: false |
+| email              | string | null: false, unique: true |
+| encrypted_password | string | null: false |
 
-Things you may want to cover:
+### Association
 
-* Ruby version
+- has_many :items
+- has_many :orders
 
-* System dependencies
+## items
+| Column      | Type       | Options     |
+| ----------- | ---------- | ----------- |
+| name        | string     | null: false |
+| description | text       | null: false |
+| price       | integer    | null: false |
+| user        | references | null: false, foreign_key: true |
 
-* Configuration
+### Association
 
-* Database creation
+- belongs_to :user
+- has_one :order
 
-* Database initialization
+## orders
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| user   | references | null: false, foreign_key: true |
+| item   | references | null: false, foreign_key: true |
 
-* How to run the test suite
+### Association
 
-* Services (job queues, cache servers, search engines, etc.)
+- belongs_to :user
+- belongs_to :item
 
-* Deployment instructions
+## addresses
+| Column        | Type       | Options     |
+| ------------- | ---------- | ----------- |
+| postal_code   | string     | null: false |
+| prefecture_id | integer    | null: false |
+| city          | string     | null: false |
+| address       | string     | null: false |
+| phone_number  | string     | null: false |
+| order         | references | null: false, foreign_key: true |
 
-* ...
+### Association
+
+- belongs_to :order
