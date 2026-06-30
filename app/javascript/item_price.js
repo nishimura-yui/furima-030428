@@ -21,4 +21,3 @@ function calc(){
   });
 }
 document.addEventListener('turbo:load', calc);
-document.addEventListener('turbo:render', calc);
