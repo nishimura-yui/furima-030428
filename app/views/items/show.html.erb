@@ -32,7 +32,7 @@
       <% end %>
     <% if user_signed_in? && current_user != @item.user %>
       <% unless @item.order.present? %>
-        <%= link_to "購入画面に進む", item_orders_path(@item) ,class:"item-red-btn"%>
+        <%= link_to "購入画面に進む", item_orders_path(@item), data:{turbo: false} ,class:"item-red-btn"%>
       <% end %>
     <% end %>
 
@@ -103,7 +103,7 @@
     </a>
   </div>
   <%# 詳細ページで表示されている商品のカテゴリー名を表示しましょう %>
-  <a href="#" class="another-item"><%= "商品のカテゴリー名" %>をもっと見る</a>
+  <a href="#" class="another-item"><%= @item.category.name %>をもっと見る</a>
   <%# //詳細ページで表示されている商品のカテゴリー名を表示しましょう %>
 </div>
 
