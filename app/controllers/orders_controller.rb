@@ -5,13 +5,13 @@ class OrdersController < ApplicationController
 
   def index
     @order_address = OrderAddress.new
-    gon.public_key = ENV["PAYJP_PUBLIC_KEY"]
+    gon.public_key = ENV['PAYJP_PUBLIC_KEY']
   end
 
   def create
     @order_address = OrderAddress.new(order_address_params)
     if @order_address.valid?
-      Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+      Payjp.api_key = ENV['PAYJP_SECRET_KEY']
       Payjp::Charge.create(
         amount: @item.price,
         card: order_address_params[:token],
@@ -23,7 +23,7 @@ class OrdersController < ApplicationController
       p @order_address.errors.full_messages
       render :index, status: :unprocessable_entity
     end
-  end 
+  end
 
   private
 
@@ -36,7 +36,16 @@ class OrdersController < ApplicationController
   end
 
   def order_address_params
-    params.require(:order_address).permit(:postal_code, :prefecture_id, :city, :address, :building_name, :phone_number, :token).merge(user_id: current_user.id, item_id: @item.id)
+    params.require(:order_address).permit(
+      :postal_code,
+      :prefecture_id,
+      :city, :address,
+      :building_name,
+      :phone_number,
+      :token
+    ).merge(
+      user_id: current_user.id,
+      item_id: @item.id
+    )
   end
-  
 end
