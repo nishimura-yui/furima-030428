@@ -1,6 +1,7 @@
 .confirm-show {
   background-color: #f8f8f8;
   width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,15 +11,16 @@
 .confirm-box {
   background-color: #FFF;
   width: 70vw;
+  height: 100vh;
   min-width: 1200px;
-  padding: 8vh 15vw;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 .confirm-title{
   font-size: 30px;
-  margin: 30px;
+  margin: 10px;
 }
 .confirm-delete-btn{
   background-color: rgb(239, 134, 134);
@@ -47,15 +49,14 @@
 }
 .confirm-name-box {
   font-size: 24px;
-  margin: 25px 0px;
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 .confirm-destroy-box{
   border: 1px solid #dedede;
-  padding: 20px 40px;
-  margin-top:50px;
+  padding: 10px 20px;
+  margin:20px 0 ;
 }
 .confirm-destroy-message {
   margin: 25px 0px;
