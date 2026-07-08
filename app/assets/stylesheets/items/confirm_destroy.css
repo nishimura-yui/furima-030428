@@ -41,9 +41,8 @@
   width: 12vw;
 }
 .confirm-box-img {
-  height: 30vh;
-  width: 41vw;
-  min-height: 350px;
+  height: 250px;
+  width: 340px;
   background-color: rgb(205, 202, 202);
   object-fit: contain;
 }
