@@ -1,0 +1,70 @@
+.confirm-show {
+  background-color: #f8f8f8;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5vh 0;
+}
+
+.confirm-box {
+  background-color: #FFF;
+  width: 70vw;
+  min-width: 1200px;
+  padding: 8vh 15vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.confirm-title{
+  font-size: 30px;
+  margin: 30px;
+}
+.confirm-delete-btn{
+  background-color: rgb(239, 134, 134);
+  text-align: center;
+  font-size: 20px;
+  color: black;
+  margin: 20px 20px;
+  padding: 1vh ;
+  width: 12vw;
+}
+.confirm-cancel-btn{
+  background-color: lightgray;
+  text-align: center;
+  font-size: 20px;
+  color: black;
+  margin: 20px 20px;
+  padding: 1vh ;
+  width: 12vw;
+}
+.confirm-box-img {
+  height: 30vh;
+  width: 41vw;
+  min-height: 350px;
+  background-color: rgb(205, 202, 202);
+  object-fit: contain;
+}
+.confirm-name-box {
+  font-size: 24px;
+  margin: 25px 0px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.confirm-destroy-box{
+  border: 1px solid #dedede;
+  padding: 20px 40px;
+  margin-top:50px;
+}
+.confirm-destroy-message {
+  margin: 25px 0px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.confirm-btn{
+  display: flex;
+  align-items: center;
+}

@@ -1,0 +1,23 @@
+<div class="confirm-show">
+  <div class="confirm-box">
+    <h1 class="confirm-title">
+      商品削除確認
+    </h1>
+    <div class="confirm-img-content" >
+      <%= image_tag @item.image ,class: "confirm-box-img" %>
+    </div>
+    <div class="confirm-name-box">
+      <%= @item.name %>
+    </div>
+
+    <div class="confirm-destroy-box">
+      <div class="confirm-destroy-message">
+        【 <%= @item.name %>】を本当に削除しますか？
+      </div>
+      <div class="confirm-btn">
+        <%= link_to "キャンセル", item_path,class: "confirm-cancel-btn" %>
+        <%= link_to "削除", item_path,  data:{ turbo_method: :delete },class:"confirm-delete-btn" %>
+      </div>
+    </div>
+  </div>
+</div>
